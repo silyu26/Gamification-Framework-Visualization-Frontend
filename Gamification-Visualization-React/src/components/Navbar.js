@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 const Navbar = () => {
     return (
       <header>
-        <div className="navbar navbar-light" style={{'background-color' : '#224466'}}>
+        <div className="navbar navbar-light" style={{'backgroundColor' : '#224466'}}>
           <div className='links contrainer'>
             <div className='row'>
                 <div className='col'>
