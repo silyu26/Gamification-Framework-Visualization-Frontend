@@ -18,7 +18,7 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Navbar />
-        <Routes>
+        <Routes><p></p>
           <Route path='/' element={<Overview token={token}/>} />
           <Route path='/introduction' element={<Intro/>} />
           <Route path='/badges' element={<Badges/>} />
