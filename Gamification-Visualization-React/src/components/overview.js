@@ -11,7 +11,7 @@ const Overview = ({token}) => {
 
     useEffect(() => {
         const fetchStatus = async ()=> {
-            const response = await fetch('http://localhost:8080/gamification/visualization/status/test3/silyu', {
+            const response = await fetch('http://localhost:8080/gamification/visualization/status/thesis/silyu', {
                 mode: 'cors',
                 method: 'GET',
                 headers: {
@@ -40,6 +40,21 @@ const Overview = ({token}) => {
         fetchStatus()
     }, [])
 
+    const handleClick = async ()=> {
+        const response = await fetch('http://localhost:8080/gamification/visualization/actions/thesis/first/silyu', {
+                mode: 'cors',
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Basic ' + btoa(token),
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
+            console.log(response)
+            const json = await response.json()
+
+    }
+
     return(
         <div className='Overview container'>
             <div className='row'>
@@ -48,6 +63,7 @@ const Overview = ({token}) => {
                 <p className='col-xs'>Current Level: {level}-{levelName}</p>
                 <p className='col-xs'>Next Level: {nextLN} at {nextLP} points!</p>
                 <p className='col-xs'>Current rank: {rank}</p>
+                <button type="button" className="btn btn-outline-success" onClick={handleClick}>Trigger Action</button>
             </div>
         </div>
     )
